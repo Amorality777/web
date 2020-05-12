@@ -3,6 +3,7 @@ sudo systemctl start web
 sudo systemctl enable web
 sudo systemctl status web
 
+sudo /etc/init.d/nginx restart
 #sudo rm -rf /etc/nginx/sites-enabled/default
 #
 #Если будут обнаружены любые ошибки, проверьте следующее:
