@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve web
+After=network.target
+
+[Service]
+User=box
+Group=www-data
+WorkingDirectory=/home/box/web
+Environment="PATH=/home/box/web/web/bin"
+ExecStart=/home/box/web/web/bin/gunicorn --workers 3 --bind unix:web.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
